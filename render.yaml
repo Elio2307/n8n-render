@@ -6,17 +6,29 @@ services:
     autoDeploy: true
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: PORT
+        value: "5678"
+
+      - key: N8N_PORT
+        value: "5678"
+
+      - key: N8N_LISTEN_ADDRESS
+        value: "0.0.0.0"
+
+      # IMPORTANTE: aquí va tu dominio real de Render (sin https)
+      - key: N8N_HOST
+        value: "n8n-oqlb.onrender.com"
+
+      - key: N8N_PROTOCOL
+        value: "https"
+
+      # IMPORTANTE: aquí va tu URL real de Render (con https)
+      - key: WEBHOOK_URL
+        value: "https://n8n-oqlb.onrender.com"
+
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: admin
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: cambia_esta_clave
-      - key: N8N_HOST
-        value: 0.0.0.0
-      - key: N8N_PORT
-        value: 5678
-      - key: N8N_PROTOCOL
-        value: https
-      - key: WEBHOOK_URL
-        value: https://n8n.onrender.com
+        value: "cambia_esta_clave"
